@@ -3,12 +3,12 @@ Reed sensor
 
 ## Introduction
 
-This script is used to read the state from one GPIO pin of raspberry pi. The pin my be connected to a reed sensor for detection an open door or for counting impulses on a gas meter.
+This script is used to read the state from one GPIO pin of raspberry pi. The pin my be connected to a reed sensor for detection of an open door or for counting impulses of a gas meter.
 
 ## Installation
 
-The script uses GPIO library from here: https://pypi.python.org/pypi/RPi.GPIO
-To install it on Raspbian do following steps:
+The script uses GPIO library from here: https://pypi.python.org/pypi/RPi.GPIO for convenient access of the GPIO pins.
+To install the library on Raspbian do following steps in a terminal window:
 
  - `sudo apt-get update`
  - `sudo apt-get install python-dev`
@@ -22,4 +22,4 @@ As long as we enabled internal pull-up resistor, we can simple connect the read 
 
 ## Running
 
-Run `sudo python reed.py` in the console. To terminate the program press Ctrl-C
+Run `sudo python reed-sensor.py` in the terminal. The script reads the state of the pin every second and writes it to the console. To terminate the program press Ctrl-C
