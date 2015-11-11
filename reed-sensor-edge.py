@@ -2,6 +2,7 @@
 
 import time
 import httplib
+import MySQLdb
 import RPi.GPIO as GPIO
 
 
@@ -12,7 +13,7 @@ GPIO.setmode(GPIO.BOARD)
 # Pin 18 (GPIO 24)
 PIN=18
 
-# Counter
+# start value of the counter
 counter=2050.04
 
 # Pin PIN as input, pull-up (3.3V)
@@ -26,6 +27,9 @@ def on_impulse(pin):
 GPIO.add_event_detect(PIN, GPIO.FALLING, callback=on_impulse, bouncetime=200)
 #GPIO.add_event_detect(PIN, GPIO.FALLING, callback=my_callback_two)
 
+db = MySQLdb.connect("localhost", "pi", "raspberry", "gasmeter")
+curs=db.cursor()
+
 # polling in a loop, until interrupted by Ctrl-C
 while 1:
 
@@ -33,7 +37,11 @@ while 1:
 
   print "alive: "+ str(GPIO.input(PIN))
 
-  # send counter
+  # safe the value in the database
+
+
+  # send counter value to the openhab runtime
+
   #restConnection = httplib.HTTPConnection('127.0.0.1', 8080)
   #restConnection.request('PUT', '/rest/items/Gas_Meter/state', str(counter))
   #resultST = restConnection.getresponse()
