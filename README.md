@@ -3,7 +3,7 @@ Reed sensor
 
 ## Introduction
 
-This script is used to read the state from one GPIO pin of raspberry pi. The pin my be connected to a reed sensor for detection of an open door or for counting impulses of a gas meter.
+This script is used to read the state from one GPIO pin of raspberry pi. The pin may be connected to a reed sensor for detection of an open door or for counting impulses of a gas meter.
 
 ## Installation
 
